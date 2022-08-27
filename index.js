@@ -1,6 +1,7 @@
 const somar = require('./somar')
 const subtrair = require('./subtrair')
 const multiplicar = require('./multiplicar')
+const dividir = require('./dividir')
 var readlineSync = require('readline-sync')
 const { subtracao } = require('./subtrair')
 const PrimeiroNumero = readlineSync.question('Insira um numero : ')
@@ -17,4 +18,5 @@ console.log(Operacao)
 console.log(somar.soma(Number(PrimeiroNumero),Number(SegundoNumero)))
 console.log(subtrair.subtracao(Number(PrimeiroNumero),Number(SegundoNumero)))
 console.log(multiplicar.multiplicacao(Number(PrimeiroNumero),Number(SegundoNumero)))
+console.log(dividir.divisao(Number(PrimeiroNumero),Number(SegundoNumero)))
 
