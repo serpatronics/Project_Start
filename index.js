@@ -1,22 +1,34 @@
+console.clear()
+
 const somar = require('./somar')
 const subtrair = require('./subtrair')
 const multiplicar = require('./multiplicar')
 const dividir = require('./dividir')
-var readlineSync = require('readline-sync')
-const { subtracao } = require('./subtrair')
-const PrimeiroNumero = readlineSync.question('Insira um numero : ')
-const SegundoNumero = readlineSync.question('Insira outro numero : ')
+const readlineSync = require('readline-sync')
+const PrimeiroNumero = readlineSync.questionFloat('Insira um numero : ')
+const SegundoNumero = readlineSync.questionFloat('Insira outro numero : ')
 const operador = ['Soma','Subtracao', 'Multiplicao','Divisao']
-const Operacao = readlineSync.keyInSelect(operador)
+const Operacao = readlineSync.keyInSelect(operador, 'Escolha a operacao: ')
 
 
+console.clear()
 
 
-console.log(PrimeiroNumero)
-console.log(SegundoNumero)
-console.log(Operacao)
-console.log(somar.soma(Number(PrimeiroNumero),Number(SegundoNumero)))
-console.log(subtrair.subtracao(Number(PrimeiroNumero),Number(SegundoNumero)))
-console.log(multiplicar.multiplicacao(Number(PrimeiroNumero),Number(SegundoNumero)))
-console.log(dividir.divisao(Number(PrimeiroNumero),Number(SegundoNumero)))
+switch (Operacao) {
+    case 0:
+        console.log(`O resultado da adicao de ${PrimeiroNumero} e ${SegundoNumero} é : : ${somar.soma(Number(PrimeiroNumero),Number(SegundoNumero))}`)
+        break;
+    case 1:
+        console.log(`O resultado da subtracao de ${PrimeiroNumero} e ${SegundoNumero} é : ${subtrair.subtracao(Number(PrimeiroNumero),Number(SegundoNumero))}`)
+        break;
+    case 2:
+        console.log(`O resultado da multiplicacao de ${PrimeiroNumero} por ${SegundoNumero} é : : ${multiplicar.multiplicacao(Number(PrimeiroNumero),Number(SegundoNumero))}`)
+        break;
+    case 3:
+        console.log(`O resultado da divisao de ${PrimeiroNumero} por ${SegundoNumero} é : ${dividir.divisao(Number(PrimeiroNumero),Number(SegundoNumero))}`)
+        break;
+    
+}
 
+
+const fim = readlineSync.question('\n ');
